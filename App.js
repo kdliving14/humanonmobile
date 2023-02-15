@@ -1,11 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, ImageBackground} from 'react-native';
+import Humanon from './Humanon';
 
 export default function App() {
+
+  const image = {uri: "https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000"}
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+        <Humanon/>
+      </ImageBackground>
     </View>
   );
 }
@@ -13,8 +18,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
+  image: {
+    flex: 1,
+    justifyContent:"center",
+    alignItems: 'center'
+  }, 
 });
